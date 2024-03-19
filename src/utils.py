@@ -30,3 +30,13 @@ def get_vacancies_by_salary(vacancies, salary_range):
             if int(min_salary) <= int(min_vacancy_salary) and int(max_salary) >= int(max_vacancy_salary):
                 vacancies_list.append(vacancy)
     return vacancies_list
+
+
+def sort_vacancies(vacancies):
+    """
+    Функция сортирует вакансии по зарплате по убыванию
+    :param vacancies:
+    :return:
+    """
+    sort_vacancy = sorted(vacancies, key=lambda x: x.salary, reverse=True)
+    return sort_vacancy
