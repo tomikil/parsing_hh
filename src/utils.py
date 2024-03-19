@@ -12,3 +12,21 @@ def filtered_vacancies(vacancies_list, words):
             if word.lower() in requirement_lower:
                 filtered_list.append(vacancy)
     return filtered_list
+
+
+def get_vacancies_by_salary(vacancies, salary_range):
+    """
+    Фцнкция фильтрует вакансии по заданному диапазону заплаты
+    :param vacancies: Список вакансий
+    :param salary_range: Заданный диапазоп зарплаты
+    :return:
+    """
+    vacancies_list = []
+    min_salary, max_salary = str(salary_range).split('-')
+    for vacancy in vacancies:
+        if vacancy.salary != 'Зарплата не указана':
+            min_vacancy_salary, max_vacancy_salary = vacancy.salary.split('-')
+
+            if int(min_salary) <= int(min_vacancy_salary) and int(max_salary) >= int(max_vacancy_salary):
+                vacancies_list.append(vacancy)
+    return vacancies_list
