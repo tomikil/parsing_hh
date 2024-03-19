@@ -50,3 +50,13 @@ def get_top_vacancies(vacancies, top_n):
     :return:
     """
     return vacancies[:top_n]
+
+
+def print_vacancies(vacancies):
+    """
+    Функция печатает информацию об фильтрованных и сортированных вакансий
+    :param vacancies:
+    :return:
+    """
+    for vacancy in vacancies:
+        print(vacancy)
