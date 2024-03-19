@@ -40,3 +40,13 @@ def sort_vacancies(vacancies):
     """
     sort_vacancy = sorted(vacancies, key=lambda x: x.salary, reverse=True)
     return sort_vacancy
+
+
+def get_top_vacancies(vacancies, top_n):
+    """
+    Функция возвращает введеное N-е количество вакансий
+    :param vacancies: Список вакансий
+    :param top_n: Количество вакансий для вывода
+    :return:
+    """
+    return vacancies[:top_n]
